@@ -1,8 +1,7 @@
-package com.tuantran.airbnb.entity;
+package com.tuantran.airbnb.entity.homestay;
 
 import io.hypersistence.utils.hibernate.type.array.ListArrayType;
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

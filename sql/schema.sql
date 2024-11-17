@@ -17,7 +17,6 @@ CREATE TABLE homestay
     district_id  INTEGER,
     province_id  INTEGER,
 
-    images TEXT[],
 
     guests SMALLINT,
     bedrooms SMALLINT,

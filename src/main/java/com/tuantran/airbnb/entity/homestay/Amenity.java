@@ -1,4 +1,4 @@
-package com.tuantran.airbnb.entity;
+package com.tuantran.airbnb.entity.homestay;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
