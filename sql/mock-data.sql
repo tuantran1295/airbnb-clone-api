@@ -8,7 +8,7 @@ SELECT
 	1,
 	1
     FROM
-    generate_series(1, 10) as i
+    generate_series(1, 10) as i;
 
 -- INSERT INTO homestay (name, description, type, host_id, status,
 -- phone_number, address, longtitude, latitude, geom, images, guests,
@@ -25,7 +25,7 @@ SELECT
 -- 3, 3, 2)
 
 INSERT INTO homestay (name, description, type, host_id, status, 
-phone_number, address, longtitude, latitude, geom, images, guests,
+phone_number, address, longitude, latitude, geom, images, guests,
 bedrooms, bathrooms)
 SELECT
     'Autumn at Homie - a romantic sea-view room ' || i,
@@ -41,4 +41,4 @@ SELECT
 	floor(random()*4)+1,
 	floor(random()*4)+1
     FROM
-    generate_series(1, 50) as i
+    generate_series(1, 50) as i;
