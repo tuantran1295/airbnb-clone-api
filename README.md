@@ -41,7 +41,7 @@
 ### Tech stack
 
 * Programming Language: Java 17
-* Framework: Spring Boot 3.3.0
+* Framework: Spring Boot 3.3.5
 * Database: Postgres 17
 * Unit Testing: JUnit 5
 * CI/CD: Github Actions
