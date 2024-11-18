@@ -58,7 +58,14 @@
 4. See and test api endpoint using swagger at http://localhost:8080/swagger-ui/index.html or use Postman
 
 ### API cURL Sample
-
+1. Get homestay by id
+```bash
+curl --location 'http://localhost:8080/api/v1/homestays/3'
+```
+2. Get homestays with pagination
+```bash
+curl --location 'http://localhost:8080/api/v1/homestays/pagination/2/5'
+```
 
 For Mr.Ujjwal Roy\
 Thank you so much! 🫶

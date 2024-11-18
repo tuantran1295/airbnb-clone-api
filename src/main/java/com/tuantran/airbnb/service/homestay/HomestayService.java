@@ -4,7 +4,11 @@ import com.tuantran.airbnb.entity.homestay.Homestay;
 import com.tuantran.airbnb.repository.homestay.HomestayRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -17,5 +21,8 @@ public class HomestayService {
         return homestay;
     }
 
+    public Page<Homestay> getHomestaysWithPagination(int offSet, int pageSize) {
+        return repository.findAll(PageRequest.of(offSet, pageSize));
+    }
 
 }
