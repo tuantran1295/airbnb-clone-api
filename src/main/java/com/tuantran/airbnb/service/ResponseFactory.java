@@ -20,6 +20,7 @@ public class ResponseFactory {
         var meta = Meta.builder()
                 .status(responseCode.getType())
                 .serviceId(appName)
+                .message(responseCode.getMessage())
                 .build();
 
         return new ResponseDTO(meta, null);
