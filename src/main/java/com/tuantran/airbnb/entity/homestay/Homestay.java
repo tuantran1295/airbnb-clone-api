@@ -1,5 +1,6 @@
 package com.tuantran.airbnb.entity.homestay;
 
+import com.tuantran.airbnb.dto.homestay.response.HomestayDetail;
 import io.hypersistence.utils.hibernate.type.array.ListArrayType;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,6 +11,27 @@ import org.hibernate.annotations.Type;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
+
+@SqlResultSetMapping(
+        name = "HomestayDetailMapping",
+        classes = @ConstructorResult(
+                targetClass = HomestayDetail.class,
+                columns = {
+                        @ColumnResult(name = "id", type = Long.class),
+                        @ColumnResult(name = "name", type = String.class),
+                        @ColumnResult(name = "description", type = String.class),
+                        @ColumnResult(name = "type", type = Integer.class),
+                        @ColumnResult(name = "status", type = Integer.class),
+                        @ColumnResult(name = "phone_number", type = String.class),
+                        @ColumnResult(name = "address", type = String.class),
+                        @ColumnResult(name = "guests", type = Integer.class),
+                        @ColumnResult(name = "bedrooms", type = Integer.class),
+                        @ColumnResult(name = "bathrooms", type = Integer.class),
+                        @ColumnResult(name = "images", type = List.class),
+                        @ColumnResult(name = "avg_price", type = Double.class)
+                }
+        )
+)
 
 @Entity
 @Table(name = "homestay")
