@@ -30,7 +30,7 @@ public class HomestayController {
         return service.getHomestaysWithPagination(offSet, pageSize);
     }
 
-    @GetMapping
+    @GetMapping("/search")
     public ResponseDTO searchHomestayWithPagination(@RequestParam(value = "guests") Integer guests,
                                                     @RequestParam(value = "checkin_date") String checkinDate,
                                                     @RequestParam(value = "checkout_date") String checkoutDate,
