@@ -66,6 +66,24 @@ curl --location 'http://localhost:8080/api/v1/homestays/3'
 ```bash
 curl --location 'http://localhost:8080/api/v1/homestays/pagination/2/5'
 ```
+3. Search homestays by area with pagination
+```bash
+curl --location 'http://localhost:8080/api/v1/homestays?checkin_date=2024-11-20&checkout_date=2024-11-23&guests=2&page=1&page_size=5'
+```
+4. Reserve homestay
+```bash
+curl --location 'http://localhost:8080/api/v1/bookings' \
+--header 'Content-Type: application/json' \
+--data '{
+    "request_id": "abc123",
+    "user_id": 1,
+    "homestay_id": 3,
+    "checkin_date": "2024-11-20",
+    "checkout_date": "2024-11-23",
+    "guests": 2,
+    "note": "I will have arrived by 2pm"
+}'
+```
 
 For Mr.Ujjwal Roy\
 Thank you so much! 🫶
