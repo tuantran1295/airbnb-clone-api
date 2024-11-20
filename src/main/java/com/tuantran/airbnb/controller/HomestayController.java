@@ -31,17 +31,25 @@ public class HomestayController {
     }
 
     @GetMapping
-    public ResponseDTO searchHomestay(@RequestParam(value = "guests") Integer guests,
-                                      @RequestParam(value = "checkin_date") String checkinDate,
-                                      @RequestParam(value = "checkout_date") String checkoutDate){
+    public ResponseDTO searchHomestayWithPagination(@RequestParam(value = "guests") Integer guests,
+                                                    @RequestParam(value = "checkin_date") String checkinDate,
+                                                    @RequestParam(value = "checkout_date") String checkoutDate,
+                                                    @RequestParam(value = "ward_id", required = false) Integer wardId,
+                                                    @RequestParam(value = "district_id", required = false) Integer districtId,
+                                                    @RequestParam(value = "province_id", required = false) Integer provinceId,
+                                                    @RequestParam(value = "page", required = true) Integer page,
+                                                    @RequestParam(value = "page_size", required = true) Integer pageSize){
 
         var request = HomestaySearchRequest.builder()
                 .checkinDate(LocalDate.parse(checkinDate))
                 .checkoutDate(LocalDate.parse(checkoutDate))
                 .guests(guests)
+                .wardId(wardId)
+                .districtId(districtId)
+                .provinceId(provinceId)
                 .build();
 
-        var result = service.searchHomestays(request);
+        var result = service.searchHomestaysWithPagination(request, page, pageSize);
 
         return responseFactory.response(result);
     }

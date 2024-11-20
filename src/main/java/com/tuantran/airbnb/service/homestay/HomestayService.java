@@ -30,14 +30,20 @@ public class HomestayService {
         return repository.findAll(PageRequest.of(offSet, pageSize));
     }
 
-    public List<HomestayDTO> searchHomestays(HomestaySearchRequest request) {
+    public List<HomestayDTO> searchHomestaysWithPagination(HomestaySearchRequest request, int pageNumber, int pageSize) {
         var checkinDate = request.getCheckinDate();
         var checkoutDate = request.getCheckoutDate();
+        var offset = (pageNumber * pageSize) - pageSize;
 
-        var homestays = repository.searchHomestay(
+        var homestays = repository.searchHomestayWithPagination(
                 request.getGuests(),
                 checkinDate.toString(),
-                checkoutDate.toString()
+                checkoutDate.toString(),
+                request.getWardId(),
+                request.getDistrictId(),
+                request.getProvinceId(),
+                pageSize,
+                offset
         );
         return homestays;
     }
