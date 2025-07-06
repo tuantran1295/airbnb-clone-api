@@ -85,5 +85,4 @@ curl --location 'http://localhost:8080/api/v1/bookings' \
 }'
 ```
 
-For Mr.Ujjwal Roy\
 Thank you so much! 🫶
