@@ -24,7 +24,7 @@
 ## Introduction
 ### Description
 * Developing a Homestay Booking System like Airbnb.
-* A personal project for applying at  
+* A personal project
 
 ### Techniques
 
